@@ -26,6 +26,7 @@
   </body>
 </html>
 
+<!-- 방법 1: 각 페이지마다 수정 -->
 <!-- <header>, <nav>, <article> 꾸미기 -->
 <!DOCTYPE html>
 <html>
@@ -37,7 +38,7 @@
       padding: 20px;
     }
     nav {
-      width 150px;
+      width: 150px;
       float: left;
       border-right: 1px solid gray;
       height: 600px;
@@ -69,3 +70,50 @@
     </article>
   </body>
 </html>
+
+<!-- 방법 2: .css 파일 추가하기 -->
+<!-- <style> </style> 안 모든 코드 style.css에 복붙 및 html의 <style> 삭제 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css_basics_2_style.css">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <h1>타이틀(헤더)</h1>
+    </header>
+    <nav>
+      <ol>
+        <li><a href="/css_basics_2_page1.html">목차 1</a></li>
+        <li><a href="/css_basics_2_page2.html">목차 2</a></li>
+        <li><a href="/css_basics_2_page3.html">목차 3</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h2>목차 1</h2>
+      목차 1에 대한 설명입니다.
+    </article>
+  </body>
+</html>
+
+<!-- 여기는 .css부분 -->
+/*<style> 안 코드만 빼옴.*/
+header {
+  border-bottom: 1px solid gray;
+  padding: 20px;
+}
+nav {
+  width: 150px;
+  float: left;
+  border-right: 1px solid gray;
+  height: 600px;
+}
+nav ol{
+  list-style: none;
+}
+article {
+  float: left;
+  padding-left: 20px;
+}

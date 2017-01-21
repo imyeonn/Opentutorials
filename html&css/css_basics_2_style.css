@@ -1,0 +1,18 @@
+/*<style> 안 코드만 빼옴.*/
+header {
+  border-bottom: 1px solid gray;
+  padding: 20px;
+}
+nav {
+  width: 150px;
+  float: left;
+  border-right: 1px solid gray;
+  height: 600px;
+}
+nav ol{
+  list-style: none;
+}
+article {
+  float: left;
+  padding-left: 20px;
+}
