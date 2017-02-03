@@ -8,8 +8,13 @@ function call(nextToken) {
 
 // (XMLHttpRequest 객체 이용) 페이지를 전환하지 않고 브라우저한테 몰래 이 주소로 접속해서 정보를 가져오라고 시킴
 var req = new XMLHttpRequest();
+var pageToken = '';
+// nextToken이 있으면 토큰명 변경
+if(nextToken) {
+  pageToken = '&pageToken='+nextToken;
+}
 // 변수로 지정한 url 주소로 접속하라고 요청
-req.open('GET', url, true);
+req.open('GET', url+pageToken, true);
 // 접속이 끝나고 뭘 해야되는지 정의
 req.onreadystatechange = function (aEvt) {
 // 접속이 끝나면
@@ -27,6 +32,10 @@ req.onreadystatechange = function (aEvt) {
         // 영상 제목과 변수로 놓은 url을 쭉 가져옴.
         // '\t': tap 키만큼의 공백
         console.log(items[i].snippet.title+'\t'+vurl);
+      }
+      // token 하나 다 돌린 뒤 다음페이지 토큰이 있으면 또 다시 콜해서 두번째 토큰 돌림.
+      if (result.nextPageToken) {
+        call(result.nextPageToken);
       }
     // 접속이 실패하면 이 코드 실행
     } else {
