@@ -1,3 +1,4 @@
+<!-- php 파일은 확장자가 .php -->
 <!DOCTYPE html>
 <html>
 <head>
